@@ -11,10 +11,15 @@ const Blogs = () => {
         {title:'How to Venture into the Bonnents business', body:'Go to jemba plaza buy stuff and start working on the bonnets',author:'Mariam K',id:7},
 
     ])
+
+    const deletePost = (id) =>{
+        const  newBlogs = blogs.filter(blog => blogs.id !== id);
+        setBlogs(newBlogs);
+    }
     return ( 
         <div className="home">
              <p>{'Blogs Here'}</p><br />
-            <BlogList blogers ={blogs}/>
+            <BlogList blogers ={blogs} deletePost = {deletePost}/>
             <BlogList blogers ={blogs.filter((blog)=>blog.author==='myusuf')} name ='myusuf Blogs!'/>
         </div>
 
